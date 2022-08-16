@@ -36,4 +36,4 @@ jobs:
     environment: production
     name: ${{matrix.region}}-${{matrix.name}}
     steps:
-      - run: echo terraform apply
+      - run: echo terraform apply 
