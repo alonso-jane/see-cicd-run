@@ -31,7 +31,7 @@ jobs:
       matrix:
         region: [euw2]
         name: [4, j3, rudder3]
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     name: ${{matrix.region}}-${{matrix.name}}
     steps:
       - run: echo terraform apply
