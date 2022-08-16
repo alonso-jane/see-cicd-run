@@ -10,7 +10,7 @@ jobs:
         region: [cac1]
         name: [1,6,7,8,10,11,12,13,14,15,16,17,18]
     runs-on: ubuntu-latest
-    name: ${{matrix.region}}-${{matrix.name}}
+    name: s-${{matrix.region}}-${{matrix.name}}
     steps:
       - run: echo terraform apply
 
