@@ -6,4 +6,6 @@ describe(`testing connection`, () => {
     await connection.connect()
   });
 
+  it('nothing', async () => {})
+
 });
