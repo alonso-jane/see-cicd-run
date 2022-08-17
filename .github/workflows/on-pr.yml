@@ -5,7 +5,6 @@ name: on-pr
 # Controls when the workflow will run
 on: 
   pull_request:
-    types: [ open, synchronize ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
