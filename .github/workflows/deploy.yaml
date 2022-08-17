@@ -2,6 +2,12 @@ name: auto-deploy
 
 on: 
   push:
+    branches:
+      - master
+
+concurrency: 
+  group: terraform-deploy
+  cancel-in-progress: true
 
 jobs:
   deploy_ca_sandbox:
