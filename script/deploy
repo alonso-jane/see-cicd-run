@@ -7,4 +7,4 @@ fi
 
 echo "Deploying container: $1";
 sleep $((RANDOM % 60)) ## mocking deployment
-echo "Deployed successfully";
+echo "Deployed successfully";  
