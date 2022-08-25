@@ -21,7 +21,6 @@ jobs:
   pod_manager:
     needs: [ update_version_file, circle_ci ]
     runs-on: ubuntu-latest
-    environment: pod_manager
     steps:
       - name: Deploy Image
         run: sleep $((RANDOM % 60))
@@ -38,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: master
     steps: 
-      - name: Close PR
+      - name: Merge to Master
         run: | 
           echo git config --global user.name "github-actions[bot]"
           echo git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
