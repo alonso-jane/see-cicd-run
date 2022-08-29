@@ -19,26 +19,26 @@ jobs:
         run: sleep $((RANDOM % 60))
 
   pod_manager:
-    needs: [ update_version_file, circle_ci ]
+    needs: [update_version_file, circle_ci]
     runs-on: ubuntu-latest
     steps:
       - name: Deploy Image
         run: sleep $((RANDOM % 60))
 
   notify:
-    needs: [ pod_manager ]
+    needs: [pod_manager]
     runs-on: ubuntu-latest
     steps:
       - name: send slack message
         run: echo message away
-        
-  post_release_merge: 
-    needs: [ notify ]
+
+  post_release_merge:
+    needs: [notify]
     runs-on: ubuntu-latest
     environment: master
-    steps: 
+    steps:
       - name: Merge to Master
-        run: | 
+        run: |
           echo git config --global user.name "github-actions[bot]"
           echo git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           echo git checkout master
@@ -46,15 +46,11 @@ jobs:
           echo git push origin master
 
   rebase_releasable_prs:
-    needs: [ post_release_merge ]
+    needs: [post_release_merge]
     runs-on: ubuntu-latest
     environment: master
-    steps: 
+    steps:
       - name: query by label
         run: echo querying
       - name: rebasing
         run: echo git rebase
-          
-
-        
-            
