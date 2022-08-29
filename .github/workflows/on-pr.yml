@@ -3,7 +3,7 @@
 name: on-pr
 
 # Controls when the workflow will run
-on: 
+on:
   pull_request:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -24,5 +24,8 @@ jobs:
     steps:
       - name: Build Image
         run: sleep $((RANDOM % 60))
-        
-            
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: hello
+        run: echo world
