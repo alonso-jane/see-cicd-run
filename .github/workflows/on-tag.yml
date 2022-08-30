@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: send slack message
-        run: echo message away
+        run: echo message away2
 
   post_release_merge:
     needs: [notify]
