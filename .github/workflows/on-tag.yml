@@ -15,7 +15,7 @@ jobs:
   update_version_file:
     runs-on: ubuntu-latest
     steps:
-      - name: Tests
+      - name: Tests2
         run: sleep $((RANDOM % 60))
 
   pod_manager:
